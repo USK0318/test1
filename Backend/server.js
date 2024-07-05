@@ -1,7 +1,13 @@
 const express = require('express');
 const port = 8001;
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
